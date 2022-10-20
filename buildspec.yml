@@ -20,10 +20,10 @@ phases:
       - echo Build started on `date`
       - echo $CODEBUILD_SRC_DIR
       - cd $CODEBUILD_SRC_DIR
-      - rm -f buildspec.yml && rm -f .git && rm -f README.md
       - rm -rf themes/hugo-coder
       - git rm -r themes/hugo-coder
       - git submodule add https://github.com/luizdepra/hugo-coder.git themes/hugo-coder
+      - echo Building hugo
       - hugo
     finally:
       - echo Building the HTML files finished
@@ -31,6 +31,7 @@ phases:
     commands:
       - echo Entered the post_build phase...
       - echo Build completed on `date`
+      - rm -f buildspec.yml && rm -rf .git && rm -f README.md
       - aws s3 sync public/ s3://$S3_BUCKET --region region
 artifacts:
   files:
