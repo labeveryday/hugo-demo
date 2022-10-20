@@ -1,7 +1,8 @@
 version: 0.2
 
 env:
-  variables: {}
+  variables:
+    - AWS_REGION: "us-east-1"
   parameter-store: {}
 
 phases:
@@ -32,7 +33,7 @@ phases:
       - echo Entered the post_build phase...
       - echo Build completed on `date`
       - rm -f buildspec.yml && rm -rf .git && rm -f README.md
-      - aws s3 sync public/ s3://$S3_BUCKET --region region
+      - aws s3 sync public/ s3://$S3_BUCKET --region $AWS_REGION
 artifacts:
   files:
     - 'public/*'
