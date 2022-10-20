@@ -34,7 +34,8 @@ phases:
       - rm -f buildspec.yml && rm -rf .git && rm -f README.md
 artifacts:
   files:
-    - 'public/**'
+    - '**/*'
+    base-directory: 'public'
 secondary-artifacts: {}
 cache:
   paths: []
