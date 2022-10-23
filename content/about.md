@@ -12,7 +12,7 @@ Hugo makes use of a variety of open source projects including:
 
 This is a test!
 
-Let's see if this works! One more time! And once more!
+Let's see if this works! One more time! And once more! And again!
 
 * https://github.com/yuin/goldmark
 * https://github.com/alecthomas/chroma
