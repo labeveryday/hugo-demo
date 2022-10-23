@@ -12,6 +12,8 @@ Hugo makes use of a variety of open source projects including:
 
 This is a test!
 
+Let's see if this works!
+
 * https://github.com/yuin/goldmark
 * https://github.com/alecthomas/chroma
 * https://github.com/muesli/smartcrop
